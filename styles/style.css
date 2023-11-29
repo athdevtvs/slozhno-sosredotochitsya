@@ -1,5 +1,220 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  margin: 0;
+
+  font-family: var(--main-font, sans-serif);
+  background-color: var(--primary-color, #000028);
+}
+
+.header {
+  display: grid;
+  /*padding: 10px 0;*/
+  min-height: 100vh;
+  background-image: url(../images/cover-image-dark.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header__title {
+  color: var(--heading-color, #db00ff);
+  text-shadow: 4px 4px 0 var(--secondary-color);
+  /*font-size: 116px;*/
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 82.5%;
+}
+
+/*.content-section {
+  padding: 0 10px;
+}*/
+
+.content__blockquote {
+  color: var(--primary-color, #000028);
+  /*margin: 8.4vh 2.666vw 4.641vh;*/
+  font-size: 1.125rem; /*18px;*/
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.content__blockquote p {
+  background-color: var(--secondary-color, #ff0070);
+}
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 13px;
+}
+
+.header__theme-menu-item {
+  color: var(--secondary-color, #ff0070);
+  font-weight: 400;
+  font-size: 18px;
+  text-align: right;
+  list-style: none;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.header__theme-menu-button {
+  text-transform: lowercase;
+  padding: 3px 13px;
+  background-color: transparent;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--secondary-color, #ff0070);
+}
+
+.decorated-zone::before {
+  content: "";
+  border-top: 1px solid var(--secondary-color, #ff0070);
+  border-right: 1px solid var(--secondary-color, #ff0070);
+  width: 25px;
+  height: 25px;
+  align-self: start;
+  justify-self: end;
+  /*margin: 0 10px;*/
+}
+
+.decorated-zone::after {
+  content: "";
+  border-bottom: 1px solid var(--secondary-color, #ff0070);
+  border-left: 1px solid var(--secondary-color, #ff0070);
+  width: 25px;
+  height: 24px;
+  align-self: end;
+  justify-self: start;
+  /*margin: 0 10px;*/
+}
+
+.rec {
+  position: absolute;
+  min-width: 80px;
+  min-height: 25px;
+  padding-right: 10px;
+  align-self: start;
+  justify-self: end;
+  background-image: url(../images/ellipse.png);
+  background-size: 21px 21px;
+  background-repeat: no-repeat;
+  /*background-position: calc(100% - 13px) calc(100% - 2px);*/
+}
+
+.rec::before {
+  content: "REC";
+  text-align: left;
+  color: var(--secondary-color, #ff0070);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.content {
+  margin-block: 40px;
+  display: grid;
+  gap: 50px;
+}
+
+.first {
+  display: grid;
+  gap: 20px;
+}
+
+.content__question {
+  color: var(--secondary-color, #ff0070);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.content__title {
+  color: var(--primary-color, #000028);
+  background-color: var(--secondary-color, #ff0070);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  margin-block-start: 20px;
+  margin-block-end: 10px;
+}
+
+.content__paragraph {
+  color: var(--text-color, #f1b2ce);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px; /* 130% */
+}
+
+.content__accent {
+  color: var(--primary-color, #000028);
+  background-color: var(--secondary-color, #ff0070);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+
+  margin-block-start: 20px;
+  margin-block-end: 10px;
+}
+
+.images h4 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.images {
+  display: grid;
+  gap: 10px;
+}
+
+.content__article__picture {
+  position: relative;
+  inline-size: calc(100vw - 20px);
+  min-inline-size: 354.999px;
+}
+
+.footer {
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 23.95fr 1fr;
+  background-image: none;
+  min-height: 100vh;
+}
+
+.footer__title {
+  align-self: center;
+  justify-self: center;
+  color: var(--heading-color, #db00ff);
+  text-shadow: 2px 2px 0 var(--secondary-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 82.5%;
+}
+
+@media (375px <= width <= 668px) {
+  .header {
+    padding: 10px 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr min-content 1fr 0.1fr;
+  }
+
+  .decorated-zone::before,
+  .decorated-zone::after {
+    margin: 0 10px;
+  }
+
+  .rec {
+    background-position: calc(100% - 13px) calc(100% - 2px);
+  }
+
+  .header__theme-menu {
+    margin-top: 5.719vh;
+  }
+
+  .content__blockquote {
+    margin: 8.4vh 2.666vw 4.641vh;
+  }
+
+  .content-section {
+    padding: 0 10px;
+  }
 }
