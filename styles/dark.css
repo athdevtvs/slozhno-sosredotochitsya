@@ -6,17 +6,117 @@
 
 :root.theme-dark {
   /* Дублируем переменные для тёмной темы */
-
   --main-font: "IBM Plex mono";
   --primary-color: #000028;
   --secondary-color: #ff0070;
+  --navigation-color: #ff0070;
+  --decorated-element-color: #ff0070;
   --heading-color: #db00ff;
+  --heading-shadow-color: #ff0070;
+  --subheading-color: #000028;
+  --content-heading-color: #ff0070;
+  --content-subheading-color: #000028;
+  --content-accent-text-color: #000028;
   --text-color: #f1b2ce;
+  --text-color-hover: rgba(255, 0, 112, 0.4);
 }
 
 .page.theme_dark {
-  /* сохраните этот селектор в приведённом виде.
+  /*
+    Сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  /* 
+    Продублировала сюда цвета для  кейза когда выбран неон 
+    с (prefers-color-scheme: light) по умолчанию в системе.
+    В этом случае (prefers-color-scheme: light) перебиваются
+    этими стилями и темная тема отображается корректно.
+  */
+  --main-font: "IBM Plex mono";
+  --primary-color: #000028;
+  --secondary-color: #ff0070;
+  --navigation-color: #ff0070;
+  --decorated-element-color: #ff0070;
+  --heading-color: #db00ff;
+  --heading-shadow-color: #ff0070;
+  --subheading-color: #000028;
+  --content-heading-color: #ff0070;
+  --content-subheading-color: #000028;
+  --content-accent-text-color: #000028;
+  --text-color: #f1b2ce;
+  --text-color-hover: rgba(255, 0, 112, 0.4);
+}
+
+.page.theme_dark .header {
+  background-image: url(../images/cover-image-dark.png);
+}
+
+/* При дефалтовой (prefers-color-scheme: light) чтобы 
+   у выбранного неона была кнопка */
+.page.theme_dark .rec {
+  position: absolute;
+  justify-self: end;
+  align-self: start;
+  min-height: 25px;
+  padding-right: 10px;
+  background-image: url(../images/ellipse.png);
+  background-repeat: no-repeat;
+  background-size: 21px 21px;
+}
+
+.page.theme_dark .rec::before {
+  content: "REC";
+  color: var(--secondary-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: left;
+}
+
+.page.theme_dark .header__title,
+.page.theme_dark .footer__title {
+  text-shadow: 4px 4px 0 #ff0070;
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--text-color);
+  cursor: pointer;
+}
+
+.link:focus {
+  outline: 1px solid var(--text-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--text-color-hover);
+}
+
+.header__theme-menu-button:focus {
+  border-bottom: 1px solid var(--decorated-element-color);
+}
+
+@media (375px <= width < 768px) {
+  .rec {
+    min-width: 70px;
+  }
+}
+
+@media (768px <= width < 1024px) {
+  .rec {
+    min-width: 80px;
+  }
+}
+
+@media (1024px <= width) {
+  .rec {
+    min-width: 80px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Чтобы при выбранной (prefers-color-scheme: dark) в неоне отображался бэкграунд*/
+  .header {
+    background-image: url(../images/cover-image-dark.png);
+  }
 }
