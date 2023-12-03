@@ -4,6 +4,7 @@
   min-width: 100vw;
   font-family: var(--main-font, sans-serif);
   background-color: var(--primary-color);
+  background-attachment: fixed;
 }
 
 .header {
