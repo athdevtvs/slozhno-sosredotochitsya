@@ -216,10 +216,6 @@
     margin-inline-start: -20px;
   }
 
-  .footer {
-    margin-inline-start: 0;
-  }
-
   .header__content {
     justify-self: end;
     align-self: center;
@@ -294,6 +290,7 @@
 
   .footer {
     padding: 20px;
+    margin-inline-start: 0;
   }
 }
 
