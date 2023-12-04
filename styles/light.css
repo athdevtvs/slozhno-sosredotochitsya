@@ -30,7 +30,7 @@
   --background-image: url(../images/cover-image-light.png);
 }
 
-.theme_light .rec {
+.theme_light .decor_rec_item {
   display: none;
 }
 
@@ -64,7 +64,7 @@
     --background-image: url(../images/cover-image-light.png);
   }
 
-  .rec {
+  .decor_rec_item {
     display: none;
   }
 }

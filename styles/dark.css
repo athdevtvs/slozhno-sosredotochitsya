@@ -26,14 +26,14 @@
   --background-image: url(../images/cover-image-dark.png);
 }
 
-.rec {
+.decor_rec_item {
   position: absolute;
   justify-self: end;
   align-self: start;
   min-width: 58px;
 }
 
-.rec::before {
+.decor_rec_item::before {
   content: "rec";
   color: var(--secondary-color);
   line-height: 24px;
@@ -41,19 +41,13 @@
   text-transform: uppercase;
 }
 
-.rec::after {
+.decor_rec_item::after {
   content: "";
   display: inline-block;
-  margin-inline-start: 10px;
   border-radius: 50%;
   box-shadow: 0px 0px 4px 3px var(--decorated-element-color);
   background-color: var(--decorated-element-color);
   inline-size: 10px;
   block-size: 10px;
+  margin-inline-start: 10px;
 }
-
-/**
-.page.theme_dark .header__title,
-.page.theme_dark .footer__title {
-  text-shadow: 4px 4px 0 #ff0070;
-}*/
