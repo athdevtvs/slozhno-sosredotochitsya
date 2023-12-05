@@ -122,11 +122,6 @@
   line-height: 23.4px; /* 130% */
 }
 
-.content {
-  gap: 50px;
-  margin-block: 40px;
-}
-
 .content-section {
   padding-inline: var(--space-between-10-px);
 }
@@ -135,6 +130,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 50px;
+  margin-block: 40px;
   padding-inline: var(--space-between-10-px);
 }
 
