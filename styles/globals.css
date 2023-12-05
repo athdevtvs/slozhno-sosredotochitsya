@@ -7,9 +7,9 @@
 }
 
 body {
+  margin: 0 auto;
   min-inline-size: 375px;
   max-inline-size: 1440px;
-  margin: 0 auto;
 }
 
 h1,
@@ -36,11 +36,11 @@ picture {
 
 button,
 a {
+  border: 0;
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  border: 0;
 }
 
 .content__title {
