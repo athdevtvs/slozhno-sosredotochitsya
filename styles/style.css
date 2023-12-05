@@ -98,6 +98,7 @@
 .content__section-pictures,
 .content__pictures {
   display: grid;
+  gap: var(--space-between-10-px);
 }
 
 .header__content {
@@ -130,17 +131,18 @@
   padding-inline: var(--space-between-10-px);
 }
 
-.content,
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  padding-inline: var(--space-between-10-px);
+}
+
 .content__section-odd,
 .content__section-even {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-between-20-px);
-}
-
-.content {
-  gap: 50px;
-  padding-inline: var(--space-between-10-px);
 }
 
 .content__accent {
@@ -163,11 +165,6 @@
 
 .link:focus {
   outline: 1px solid var(--text-color);
-}
-
-.content__section-pictures,
-.content__pictures {
-  gap: var(--space-between-10-px);
 }
 
 .cocontent__picture {
