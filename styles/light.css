@@ -54,11 +54,6 @@
 }
 
 @media (prefers-color-scheme: light) {
-  @media (width < 1024px) {
-    :root {
-      --heading-shadow-color: #ff8dcb;
-    }
-  }
   :root {
     /* Дублируем переменные светлой темы */
     /* Удалила отовсюду в темах переменную с шрифтами чтобы не утяжелять */
@@ -84,5 +79,11 @@
   */
   .decor_rec_item {
     display: none;
+  }
+
+  @media (width < 1024px) {
+    :root {
+      --heading-shadow-color: #ff8dcb;
+    }
   }
 }
