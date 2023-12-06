@@ -14,7 +14,6 @@
     В этом случае темные цвета заданные в :root из variables
     перебиваются этими стилями и светлая тема отображается корректно.
   */
-  --main-font: "IBM Plex mono";
   --primary-color: #fff1f7;
   --secondary-color: #ff8dcb;
   --navigation-color: #353430;
@@ -30,8 +29,22 @@
   --background-image: url(../images/cover-image-light.png);
 }
 
+/*
+  Это свойство оставлено, потому что без него с 
+  включенной prefers-color-scheme: dark и выбранным пунктом меню "день" 
+  отображается декоративный элемент, а он не должен отображаться в такой комбинации.
+*/
 .theme_light .decor_rec_item {
   display: none;
+}
+
+/* 
+  Поместила .theme_dark тут потому что только так с 
+  включенной  prefers-color-scheme: light и выбранным пунктом меню "неон"
+  появляется декоративный элемент который необходимо отображать в темной теме.
+*/
+.theme_dark .decor_rec_item {
+  display: inline;
 }
 
 @media (width < 1024px) {
@@ -48,7 +61,7 @@
   }
   :root {
     /* Дублируем переменные светлой темы */
-    --main-font: "IBM Plex mono", monospace;
+    /* Удалила отовсюду в темах переменную с шрифтами чтобы не утяжелять */
     --primary-color: #fff1f7;
     --secondary-color: #ff8dcb;
     --navigation-color: #353430;
@@ -64,6 +77,11 @@
     --background-image: url(../images/cover-image-light.png);
   }
 
+  /*
+    Оставила этот дубликат, т.к. без него с 
+    включенной  prefers-color-scheme: light и выбранным пунктом меню "авто"
+    отображается декоративный элемент, а он не должен отображаться в такой комбинации.
+  */
   .decor_rec_item {
     display: none;
   }
