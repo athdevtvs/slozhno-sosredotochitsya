@@ -194,6 +194,10 @@
     padding-block: var(--space-between-big);
   }
 
+  .decorated-zone::after {
+    margin-inline-start: 20px;
+  }
+
   .header__theme-menu,
   .header__content {
     justify-self: end;
@@ -274,6 +278,10 @@
   .header {
     grid-template-columns: 1fr min-content 1fr;
     grid-template-rows: 0.1fr 1fr min-content 0.42fr 0.58fr 0.1fr;
+  }
+
+  .decorated-zone::after {
+    margin-inline-start: 20px;
   }
 
   .header.decorated-zone::before {
